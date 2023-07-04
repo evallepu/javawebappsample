@@ -8,7 +8,7 @@ def getFtpPublishProfile(def publishProfilesJson) {
 }
 
 node {
-  withEnv(['AZURE_SUBSCRIPTION_ID= Azure subscription 1',
+  withEnv(['AZURE_SUBSCRIPTION_ID= 042819fc-7b38-42d4-8080-df4ff670eae6',
         'AZURE_TENANT_ID= 2443ceab-fa14-4c8-a199-c9184de12a5b']) {
     stage('init') {
       checkout scm
@@ -22,7 +22,7 @@ node {
       def resourceGroup = '<MYFIRST>'
       def webAppName = '<Jenkinpipe>'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: '<service_princial>', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
+      withCredentials([usernamePassword(credentialsId: '<Eswar>', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
        sh '''
           az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
           az account set -s $AZURE_SUBSCRIPTION_ID

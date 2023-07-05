@@ -22,9 +22,9 @@ node {
       def resourceGroup = '<MYFIRST>'
       def webAppName = '<Jenkinpipe>'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: '<Eswar>', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
+      // withCredentials([usernamePassword(credentialsId: '<Eswar>', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
        sh '''
-          az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+          az login --service-principal -u 1226688e-5fcc-4a66-bc44-1329a613dc0a -p Dne8Q~_d-r1Df3Iuz6Ldb~0JYrbH6F4eeZVOMcYM -t $AZURE_TENANT_ID
           az account set -s $AZURE_SUBSCRIPTION_ID
         '''
       }
